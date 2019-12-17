@@ -48,7 +48,8 @@ function processFirstItem(stringList, callback) {
  * [2] Invoking `processLength` passing `[]` and `(num) => "There are " + num`,
  * should return "There are 0".
 */
-function processLength(/* CODE HERE */) {
+function processLength(list, callback) {
+  return callback(list.length);
   /* CODE HERE */
 }
 
@@ -66,7 +67,8 @@ function processLength(/* CODE HERE */) {
  * Invoking `processLastItem` passing `['foo', 'bar']` and `(str) => str + str`,
  * should return 'barbar'.
 */
-function processLastItem(/* CODE HERE */) {
+function processLastItem(stringList, callback) {
+  return callback(stringList[stringList.length-1]);
   /* CODE HERE */
 }
 
@@ -76,6 +78,7 @@ function processLastItem(/* CODE HERE */) {
  * @instructions
  * Implement a higher-order function called `processSum`.
  * It takes two arguments:
+ * 
  * @param numberList array of numbers.
  * @param callback function that takes a number as its argument.
  * @returns the result of invoking `callback` passing the SUM of all elements in `numberList`.
@@ -87,9 +90,11 @@ function processLastItem(/* CODE HERE */) {
  * [2] Invoking `processSum` passing `[]` and `(num) => num + 1000`,
  * should return 1000.
 */
-function processSum(/* CODE HERE */) {
+function processSum(numberList, callback) {
+      return callback(numberList.reduce( (accumulator, num) => accumulator + num, 0))}
+  
   /* CODE HERE */
-}
+
 
 /**
  * ### Challenge `processProduct`
@@ -109,8 +114,9 @@ function processSum(/* CODE HERE */) {
  * [2] Invoking `processProduct` passing 25 and 0 and `(num) => num + 1000`,
  * should return 1000.
 */
-function processProduct(/* CODE HERE */) {
+function processProduct(num1, num2, callback) {
   /* CODE HERE */
+  return callback(num1 + num2)
 }
 
 /**
